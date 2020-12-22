@@ -515,6 +515,8 @@ def main(args):
             runner_args.append('--kops-kubernetes-version=%s/%s' % (
                 args.stage.replace('gs://', 'https://storage.googleapis.com/'),
                 version))
+    else:
+        print >>sys.stderr, 'warning: no staging option, not publishing results anywhere'
 
     # TODO(fejta): move these out of this file
     if args.up == 'true':
